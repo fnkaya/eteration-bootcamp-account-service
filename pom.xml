@@ -15,6 +15,9 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
+        <sonar.projectKey>fnkaya_eteration-bootcamp-account-service</sonar.projectKey>
+        <sonar.organization>fnkaya</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <dependencies>
         <dependency>
@@ -64,6 +67,9 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>
+            app
+        </finalName>
     </build>
 
 </project>
