@@ -1,5 +1,6 @@
 package com.fnkaya.accountservice;
 
+import com.fasterxml.jackson.core.JsonFactoryBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
