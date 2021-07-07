@@ -28,6 +28,11 @@ public class AccountService {
         return "Kayıt işlemi başarılı.";
     }
 
+    public String createAll(List<Account> accountList) {
+        repository.saveAll(accountList);
+        return "Toplu kayıt işlemi başarılı.";
+    }
+
     public Account update(Account account) {
         Account accountDb = get(account.getId());
         accountDb.setEmail(account.getEmail());
@@ -40,5 +45,12 @@ public class AccountService {
         repository.delete(get(id));
 
         return "Kayıt başarıyla silindi.";
+    }
+
+    public String deleteAll(List<Long> idList) {
+        List<Account> accountList = repository.findAllById(idList);
+        repository.deleteAll(accountList);
+
+        return "Tüm kayıtlar başarıyla silindi.";
     }
 }

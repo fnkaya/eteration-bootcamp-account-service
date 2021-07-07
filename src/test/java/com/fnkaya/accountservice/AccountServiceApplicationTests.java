@@ -20,11 +20,11 @@ class AccountServiceApplicationTests {
 
     @Test
     void contextLoads() throws Exception {
-        /*String jsonResponse = "{\"id\": 1,\"email\": \"test1@gmail.com\",\"password\": \"123456\"}";
+        String jsonResponse = "{\"id\": 1,\"email\": \"test1@gmail.com\",\"password\": \"123456\"}";
 
         mockMvc.perform(get("/api/v1/account/1"))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(content().json(jsonResponse));*/
+                .andExpect(content().json(jsonResponse));
     }
 
 }

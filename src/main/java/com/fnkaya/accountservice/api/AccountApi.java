@@ -40,6 +40,14 @@ public class AccountApi {
                 .body(response);
     }
 
+    @RequestMapping(value = "list", method = RequestMethod.POST)
+    public ResponseEntity<String> createAll(@RequestBody Map<String, List<Account>> map) {
+        String response = service.createAll(map.get("accountList"));
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(response);
+    }
+
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<Account> update(@RequestBody Account account) {
         Account uAccount = service.update(account);
@@ -50,6 +58,13 @@ public class AccountApi {
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
     public ResponseEntity<String> delete(@PathVariable("id") Long id) {
         String response = service.delete(id);
+
+        return ResponseEntity.ok(response);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteAll(@RequestBody List<Long> idList) {
+        String response = service.deleteAll(idList);
 
         return ResponseEntity.ok(response);
     }
