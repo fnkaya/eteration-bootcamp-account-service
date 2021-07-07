@@ -24,7 +24,7 @@ class AccountServiceApplicationTests {
 
         mockMvc.perform(get("/api/v1/account/1"))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(content().json(jsonResponse));
+                .andExpect(content().string("Verilen id değerine sahip bir kayıt bulunamadı.");/*.json(jsonResponse))*/;
     }
 
 }

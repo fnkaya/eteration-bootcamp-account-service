@@ -16,7 +16,7 @@ public class AccountService {
 
     public Account get(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Verilen id değerine sahip bir kayır bulunamadı."));
+                .orElseThrow(() -> new IllegalArgumentException("Verilen id değerine sahip bir kayıt bulunamadı."));
     }
 
     public List<Account> getAll() {
