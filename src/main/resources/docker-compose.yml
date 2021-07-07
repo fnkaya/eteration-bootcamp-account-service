@@ -6,7 +6,9 @@ services:
     container_name: postgres
     restart: always
     environment:
-      POSTGRES_USERNAME: eteration
       POSTGRES_PASSWORD: bootcamp
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
     ports:
       - 5432:5432

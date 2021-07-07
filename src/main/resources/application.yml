@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/eteration
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: bootcamp
   jpa:
