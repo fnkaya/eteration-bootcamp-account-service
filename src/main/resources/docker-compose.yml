@@ -6,6 +6,7 @@ services:
     container_name: postgres
     restart: always
     environment:
+      POSTGRES_USERNAME: eteration
       POSTGRES_PASSWORD: bootcamp
     ports:
       - 5432:5432
