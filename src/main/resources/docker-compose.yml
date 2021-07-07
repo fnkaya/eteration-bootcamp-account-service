@@ -11,3 +11,7 @@ services:
       POSTGRES_PASSWORD: bootcamp
     ports:
       - 5432:5432
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./database/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - ./database/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
