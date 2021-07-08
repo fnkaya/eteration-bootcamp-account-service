@@ -20,7 +20,7 @@ public class AccountService {
     }
 
     public List<Account> getAll() {
-        return repository.findAll(Sort.by("email"));
+        return repository.findAll();
     }
 
     public String create(Account account) {
