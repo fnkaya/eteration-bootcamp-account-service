@@ -18,21 +18,21 @@ public class AccountApi {
 
     private final AccountService service;
 
-    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+    @GetMapping(value = "{id}")
     public ResponseEntity<Account> get(@PathVariable(value = "id") Long id) {
-        Account account = service.get(id);
+        var account = service.get(id);
 
         return ResponseEntity.ok(account);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public ResponseEntity<Map<String, List<Account>>> getAll() {
         List<Account> accountList = service.getAll();
 
         return ResponseEntity.ok(Map.of("accountList", accountList));
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public ResponseEntity<String> create(@RequestBody Account account) {
         String response = service.create(account);
 
@@ -40,7 +40,7 @@ public class AccountApi {
                 .body(response);
     }
 
-    @RequestMapping(value = "list", method = RequestMethod.POST)
+    @PostMapping(value = "list")
     public ResponseEntity<String> createAll(@RequestBody Map<String, List<Account>> map) {
         String response = service.createAll(map.get("accountList"));
 
@@ -48,21 +48,21 @@ public class AccountApi {
                 .body(response);
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
+    @PutMapping
     public ResponseEntity<Account> update(@RequestBody Account account) {
-        Account uAccount = service.update(account);
+        var uAccount = service.update(account);
 
         return ResponseEntity.ok(uAccount);
     }
 
-    @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
+    @DeleteMapping(value = "{id}")
     public ResponseEntity<String> delete(@PathVariable("id") Long id) {
         String response = service.delete(id);
 
         return ResponseEntity.ok(response);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE)
+    @DeleteMapping
     public ResponseEntity<String> deleteAll(@RequestBody List<Long> idList) {
         String response = service.deleteAll(idList);
 
