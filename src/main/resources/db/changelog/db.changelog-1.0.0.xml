@@ -17,7 +17,7 @@
         </sql>
     </changeSet>
 
-    <changeSet id="fnkaya" author="insert-08.07.2021-10:31">
+    <changeSet author="fnkaya" id="insert-08.07.2021-10:31">
         <sql>
             INSERT INTO accounts (id, email, passwd) VALUES(1, 'test1@gmail.com', '123456');
             INSERT INTO accounts (id, email, passwd) VALUES(2, 'test2@gmail.com', '123456');
