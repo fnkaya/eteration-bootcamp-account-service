@@ -2,10 +2,7 @@ package com.fnkaya.accountservice.model;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -15,6 +12,7 @@ import javax.persistence.Id;
 @ToString
 @Builder
 @Entity
+@Table(name = "accounts")
 public class Account {
 
     @Id
